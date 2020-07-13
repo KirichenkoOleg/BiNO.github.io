@@ -6,6 +6,7 @@ $(function() {
         nextArrow: '<span type = "button" class = "slick-next"><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-right" class="svg-arrowRight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.48 272.97L91.13 467.31a24 24 0 01-33.94 0l-22.67-22.66a24 24 0 01-.04-33.9L188.5 256 34.48 101.25a24 24 0 01.04-33.9L57.2 44.7a24 24 0 0133.94 0l194.35 194.34a24 24 0 010 33.94z"/></svg></ span>',
         // dots: true,
         // slidesToShow: 1,
+        draggable: false,//перетаскиванье мышъю
         easing: 'ease',
     });
 
