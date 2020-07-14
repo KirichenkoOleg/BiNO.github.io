@@ -65,35 +65,8 @@ h1, h2, h3, h4, h5, h6, a, p, span {
     line-height: 1.0;
 }
 
-//----------------------------------------------------------------- общие стартовые стили
+//----------------------------------------------------------------- base styles
 .container {
     max-width: 1170px;
     margin: 0 auto;
 }
-
-// -----------------------------------------<input>--
-input[type=text],
-input[type=email],
-input[type=tel],
-textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-.input {
-    width: 100%;
-    border: none;
-}
-textarea {
-    resize: none;
-    height: 117px;
-    padding: 10px 20px;
-}
-// -----------------------------------------<input>--
-// -----------------------------------------@mixin--
-@mixin rotate($deg) {
-    -webkit-transform: rotate($deg);
-    -ms-transform: rotate($deg);
-    transform: rotate($deg);
-}
-// -----------------------------------------@mixin--

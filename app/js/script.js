@@ -1,4 +1,5 @@
 $(function() {
+    objectFitImages();
 
     $('.slider').slick({
         infinite: false,
