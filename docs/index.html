@@ -29,7 +29,7 @@
             <div class="slider__item">
                 <img data-lazy="./img/Header/lake.jpg" alt="second slide">
                 <div class="container header__slide-content ">
-                    <h3 class="header__topTitle title title_topTitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                    <h3 class="header__topTitle title title_topTitle">Lorem ipsum dolor, sit amet consectetur.</h3>
                     <p class="header__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, nihil qui porro expedita culpa saepe impedit libero esse error voluptate commodi laudantium molestias provident officiis quia ducimus dignissimos consectetur dolores.</p>
                     <div class="header__buttons">
                         <a href="#" class="button button_primary header__btn">Get started now</a>
@@ -40,7 +40,7 @@
             <div class="slider__item">
                 <img data-lazy="./img/Header/desert.jpg" alt="third slide">
                 <div class="container header__slide-content ">
-                    <h3 class="header__topTitle title title_topTitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+                    <h3 class="header__topTitle title title_topTitle">Lorem ipsum dolor, sit amet consectetur.</h3>
                     <p class="header__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, nihil qui porro expedita culpa saepe impedit libero esse error voluptate commodi laudantium molestias provident officiis quia ducimus dignissimos consectetur dolores.</p>
                     <div class="header__buttons">
                         <a href="#" class="button button_primary header__btn">Get started now</a>
@@ -51,23 +51,28 @@
         </div>
 
         <div class="container header__container">
-            <div class="header__siteMenu">
+            <div class="header__topBar">
                 <img src="./img/Header/Logo.png" alt="Site logo" class="header__logo">
-                <nav class="header__nav-menu nav-menu">
-                    <a href="#" class="nav-menu__link nav-menu_active">Home </a>
-                    <a href="#" class="nav-menu__link">About us </a>
-                    <a href="#" class="nav-menu__link">Portfolio </a>
-                    <a href="#" class="nav-menu__link">Pricing </a>
-                    <a href="#" class="nav-menu__link">Team </a>
-                    <a href="#" class="nav-menu__link">Blog </a>
-                    <a href="#" class="nav-menu__link">Contact </a>
-                </nav>
+
+                <div class="header__menu menu">
+                    <input class="menu__toggle" id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <ul class="menu__box">
+                        <li class="menu__item menu__item_active"> <a href="#">Home</a> </li>
+                        <li class="menu__item"> <a href="#">About us</a> </li>
+                        <li class="menu__item"> <a href="#">Portfolio</a> </li>
+                        <li class="menu__item"> <a href="#">Pricing</a> </li>
+                        <li class="menu__item"> <a href="#">Team</a> </li>
+                        <li class="menu__item"> <a href="#">Blog</a> </li>
+                        <li class="menu__item"> <a href="#">Contact</a> </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </header>
-    <main>
-        <section class="blogs"></section>
-    </main>
     
     <script src="./js/main.js"></script>
 </body>

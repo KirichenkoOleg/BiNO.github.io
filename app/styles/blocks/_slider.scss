@@ -46,6 +46,9 @@
         cursor: pointer;
         margin: 0 40px;
         border-radius: 3px;
+        @media screen and (max-width:$md) {
+            margin: 0 20px;
+        }
         
         svg {
             width: 20px;

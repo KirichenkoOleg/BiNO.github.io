@@ -11,10 +11,11 @@ $(function() {
         easing: 'ease',
     });
 
-    var items = $('.nav-menu__link');
+    //----------------------------------- activate nav items
+    var items = $('.menu__item');
     items.on('click', function(e) {
-        items.removeClass('nav-menu_active');
-        $(this).addClass('nav-menu_active');
+        items.removeClass('menu__item_active');
+        $(this).addClass('menu__item_active');
         return false;
     });
 

@@ -2,22 +2,38 @@
     height: 100vh;
     position: relative;
     padding: 40px 0 0 0;
+    @media screen and (max-width:$md) {
+        padding: 20px 0;
+    }
 
     &__container {
         position: relative;
         z-index: 10;
     }
-    &__siteMenu {
+    &__logo {
+        width: 141px;
+        height: 52px;
+    }
+    &__topBar {
         display: flex;
         justify-content: space-between;
+        position: relative;
+        // background-color: yellowgreen;
+        @media screen and (max-width:$lg) {
+            padding: 0 20px;
+        }
     }
 
     &__slide-content {
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100%;
+        @media screen and (max-width:$lg) {
+            padding-top: 100px;
+        }
+
         &::after {
         content: '';
             position: absolute;
@@ -30,11 +46,20 @@
         }
     }
 
-    // &__topTitle {}
+    &__topTitle {
+        margin-bottom: 45px;
+        @media screen and (max-width:$lg) {
+            margin-bottom: 25px;
+        }
+    }
     &__title {
         position: relative;
         padding-bottom: 40px;
         margin-bottom: 40px;
+        @media screen and (max-width:$lg) {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
     }
     &__title-design {
         width: 7px;
@@ -72,6 +97,10 @@
         text-align: center;
         line-height: 1.7;
         margin-bottom: 60px;
+        @media screen and (max-width:$lg) {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
     }
 
     &__buttons {
@@ -82,6 +111,165 @@
     }
     &__btn {
         margin: 0 15px;
+    }
+}
+
+//--------------------------------------------custom-menu
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;//чтоб сработала ширина menu__box для PC
+    position: relative;
+
+    &__toggle {
+        opacity: 0;
+        @media screen and (max-width: $md), screen and (max-height: 590px) {
+        //(max-height: 590px) когда нехватает высоты включается меню бургер
+            &:checked~.menu__btn {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 5px;
+                span {
+                    transform: rotate(45deg);
+                    &::before {
+                        top: 0; //возвращает на исходное место
+                        transform: rotate(0);
+                    }
+                    &::after {
+                        top: 0;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            &:checked~.menu__box {
+                visibility: visible;
+                left: 0; //приактивации возвращает блок на место
+            }
+        }
+        
+    }
+
+    /* стилизуем кнопку */
+    &__btn {
+        display: none;
+        @media screen and (max-width: $md), screen and (max-height: 590px) {
+            //для планшетов
+            display: flex;
+            /* используем flex для центрирования содержимого */
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            /* центрируем содержимое кнопки */
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 20;
+
+            /* добавляем "гамбургер" */
+            span,
+            span::before,
+            span::after {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #e74c3c;
+                transition-duration: .25s;
+            }
+            span::before {
+                content: '';
+                top: -12px;
+            }
+            span::after {
+                content: '';
+                top: 12px;
+            }
+        }
+    }
+
+    /* контейнер меню */
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 100%;
+        max-width: 750px;
+        
+        @media screen and (max-width: $md), screen and (max-height: 590px) {
+            display: block;
+            width: 300px;
+            height: 100%;
+            padding: 40px 0;
+            position: fixed;
+            top: 0;
+            left: -100%; //убираем за край
+            visibility: hidden; //ограничиваем видимость границей контейнера
+            text-align: center;
+            background-color: #ECEFF1;
+            box-shadow: 5px 0px 6px rgba(0, 0, 0, .2);
+            z-index: 15;
+            transition-duration: .25s;
+        }
+    }
+
+    /* элементы меню */
+    &__item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+
+        @media screen and (max-width: $md), screen and (max-height: 590px) {
+            //for burger menu
+            display: block;
+            padding: 12px 24px;
+            transition-duration: .25s;
+            &:hover {
+                background-color: #CFD8DC;
+            }
+        }
+
+        a {
+            color: #f4f5f9;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: $textFont;
+            text-decoration: none;
+            text-transform: uppercase;
+            @media screen and (max-width: $md), screen and (max-height: 590px) {
+                //for burger menu
+                color: #333;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+        &_active {
+            border-color: #e74c3c;
+            a {
+                color: #e74c3c;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//----------------------------------------------slider
+.title {
+    font-size: 72px;
+    font-family: $textFont;
+    font-weight: 800;
+    color: #f4f5f9;
+    text-align: center;
+    text-transform: uppercase;
+    @media screen and (max-width:$lg) {
+        font-size: 45px;
+    }
+
+    &_topTitle {
+        font-size: 20px;
     }
 }
 
@@ -105,42 +293,5 @@
     &:hover {
         transition-duration: 0s;
         box-shadow: inset 0 0 5px 0px #ffffff;
-    }
-}
-
-.title {
-    font-size: 72px;
-    font-family: $textFont;
-    font-weight: 800;
-    color: #f4f5f9;
-    text-align: center;
-    text-transform: uppercase;
-    &_topTitle {
-        font-size: 24px;
-        margin-bottom: 45px;
-    }
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 750px;
-
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #f4f5f9;
-        font-size: 14px;
-        font-family: $textFont;
-        text-transform: uppercase;
-        text-decoration: none;
-        border-bottom: 2px solid transparent;
-    }
-    &_active {
-        color: #e74c3c;
-        font-weight: bold;
-        border-color: #e74c3c;
     }
 }
