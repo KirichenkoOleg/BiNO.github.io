@@ -70,29 +70,73 @@
         }
     }
 
-    .slick-dots {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
+    // .slick-dots {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     z-index: 10;
+    //     @media screen and (max-width:$md) {
+    //         // background-color: grey;
+    //         padding-bottom: 30px;
+    //     }
+    // }
+    // .slick-dots li {
+    //     list-style: none;
+    //     margin: 0 10px;
+
+    //     &.slick-active button {
+    //         background-color: #000000;
+    //         border-color: orangered;
+    //         @media screen and (max-width:$md) {}
+    //     }
+
+    //     @media screen and (max-width:$md) {}
+    // }
+    // .slick-dots button {
+    //     font-size: 0;
+    //     width: 15px;
+    //     height: 15px;
+    //     border-radius: 50%;
+    //     background-color: transparent;
+    //     background-color: honeydew;
+    //     width: 20px;
+    //     height: 20px;
+    //     @media screen and (max-width:$md) {}
+    // }
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    @media screen and (max-width:$md) {
+        padding-bottom: 30px;
     }
-    .slick-dots li {
+
+    li {
         list-style: none;
         margin: 0 10px;
 
         &.slick-active button {
-            background-color: #000000;
-            border-color: orangered;
+            background-color: #e74c3c;
         }
     }
-    .slick-dots button {
+
+    button {
         font-size: 0;
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
+        background-color: whitesmoke;
         border-radius: 50%;
+        cursor: pointer;
     }
 }
